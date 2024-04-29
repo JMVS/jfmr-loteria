@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loter&iacute;a - Jornadas de Familias - Mar&iacute;a Reina</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div class="contenedor">
+		<!-- INICIO Sección lateral -->
+		<section class="contenedor-izquierda">
+			<!-- Inicio bandera -->
+			<section class="bandera-principal">
+				<!-- Tiras de colores MR -->
+				<div class="bandera-superior"></div>
+				<!-- Título y logo -->
+				<div class="bandera-inferior">
+					<div class="bandera-contenido">
+						<div class="bandera-titulo">Loter&iacute;a</div>
+						<div class="bandera-logo">
+							<img src="logo.png" alt="Jornadas de Familias">
+							<p>Jornadas de Familias</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Fin bandera -->
+			<!-- Inicio información y controles de acción -->
+			<section class="info-control">
+				<!-- Cantidad de bolillas ya jugadas -->
+				<div class="bolillas-total">
+					<span>Bolillas jugadas</span>
+					<span>-</span>
+				</div>
+				<!-- Hora actual -->
+				<div class="reloj">00:00</div>
+				<!-- Controles de acción -->
+				<div class="control">
+					<!-- Cuadro de texto para el ingreso de los números -->
+					<input type="number" id="number-input" min="1" max="90">
+					<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+					<div class="botones">
+						<!-- Botón de AGREGAR NÚMERO -->
+						<button id="boton-agregar" title="Agregar n&uacute;mero ingresado en el campo superior (Enter)">
+							<!--<img src="icon-agregar.png" alt="Agregar número">-->
+							<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath d='M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z'/%3E%3C/svg%3E" alt="Agregar número">
+						</button>
+						<!-- Botón de BINGO -->
+						<button id="boton-bingo" title="Mostrar ventana emergente de bingo con los números jugados (Ctrl+Alt+B)">
+							<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3Cpath d='M400 0H176c-26.5 0-48.1 21.8-47.1 48.2c.2 5.3 .4 10.6 .7 15.8H24C10.7 64 0 74.7 0 88c0 92.6 33.5 157 78.5 200.7c44.3 43.1 98.3 64.8 138.1 75.8c23.4 6.5 39.4 26 39.4 45.6c0 20.9-17 37.9-37.9 37.9H192c-17.7 0-32 14.3-32 32s14.3 32 32 32H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H357.9C337 448 320 431 320 410.1c0-19.6 15.9-39.2 39.4-45.6c39.9-11 93.9-32.7 138.2-75.8C542.5 245 576 180.6 576 88c0-13.3-10.7-24-24-24H446.4c.3-5.2 .5-10.4 .7-15.8C448.1 21.8 426.5 0 400 0zM48.9 112h84.4c9.1 90.1 29.2 150.3 51.9 190.6c-24.9-11-50.8-26.5-73.2-48.3c-32-31.1-58-76-63-142.3zM464.1 254.3c-22.4 21.8-48.3 37.3-73.2 48.3c22.7-40.3 42.8-100.5 51.9-190.6h84.4c-5.1 66.3-31.1 111.2-63 142.3z'/%3E%3C/svg%3E" alt="Bingo">
+						</button>
+						<!-- Botón de LINEA -->
+						<button id="boton-linea" title="Mostrar ventana emergente de l&iacute;nea con los números jugados (Ctrl+Alt+L)">
+							<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 512'%3E%3Cpath d='M32 32C14.3 32 0 46.3 0 64S14.3 96 32 96H608c17.7 0 32-14.3 32-32s-14.3-32-32-32H32zm0 384c-17.7 0-32 14.3-32 32s14.3 32 32 32H608c17.7 0 32-14.3 32-32s-14.3-32-32-32H32zM7 167c-9.4 9.4-9.4 24.6 0 33.9l55 55L7 311c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l55-55 55 55c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-55-55 55-55c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-55 55L41 167c-9.4-9.4-24.6-9.4-33.9 0zM265 167c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l55 55-55 55c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l55-55 55 55c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-55-55 55-55c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-55 55-55-55zM455 167c-9.4 9.4-9.4 24.6 0 33.9l55 55-55 55c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l55-55 55 55c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-55-55 55-55c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-55 55-55-55c-9.4-9.4-24.6-9.4-33.9 0z'/%3E%3C/svg%3E" alt="L&iacute;nea">
+						</button>
+						<!-- Botón de DESHACER -->
+						<button id="boton-deshacer" title="Deshacer último número ingresado (Ctrl+Alt+Z">
+							<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M48.5 224H40c-13.3 0-24-10.7-24-24V72c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2L98.6 96.6c87.6-86.5 228.7-86.2 315.8 1c87.5 87.5 87.5 229.3 0 316.8s-229.3 87.5-316.8 0c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0c62.5 62.5 163.8 62.5 226.3 0s62.5-163.8 0-226.3c-62.2-62.2-162.7-62.5-225.3-1L185 183c6.9 6.9 8.9 17.2 5.2 26.2s-12.5 14.8-22.2 14.8H48.5z'/%3E%3C/svg%3E" alt="Deshacer">
+						</button>
+						<!-- Botón de NUEVA PARTIDA -->
+						<button id="boton-nueva-partida" title="Iniciar una nueva partida (Ctrl+Alt+N)">
+							<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath d='M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128z'/%3E%3C/svg%3E" alt="Nueva partida">
+						</button>
+						<!-- Botón para ALTERNAR COLORES -->
+						<button id="boton-alternar-colores" title="Alternar colores (Ctrl+Alt+C)">
+							<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath d='M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm64 64v64h64V96h64v64h64V96h64v64H320v64h64v64H320v64h64v64H320V352H256v64H192V352H128v64H64V352h64V288H64V224h64V160H64V96h64zm64 128h64V160H192v64zm0 64V224H128v64h64zm64 0H192v64h64V288zm0 0h64V224H256v64z'/%3E%3C/svg%3E" alt="Alternar colores">
+						</button>
+					</div>
+				</div>
+			</section>
+			<!-- Fin información y controles de acción -->
+		</section>
+		<!-- FIN Sección lateral -->
+		<!-- INICIO Sección principal -->
+		<section class="contenedor-principal">
+			<!-- Inicio mostrar el número de bolilla actual -->
+			<section class="contenedor-bola-actual">
+				<div class="recuadro-bola-actual">
+					<figure class="bola">
+						<div class="bola-numero">0</div><span class="sombra"></span>
+					</figure>
+				</div>
+			</section>
+			<!-- Fin mostrar el número de bolilla actual -->
+			<!-- Inicio mostrar los números de las últimas bolillas que salieron -->
+			<section class="contenedor-ultimos-numeros">
+				<div class="recuadro-ultimos-numeros">
+					<span class="titulo-ultimos-numeros"><h1>&Uacute;ltimos n&uacute;meros</h1></span>
+					<!-- El contenido se genera automáticamente por JS calculando el espacio disponible -->
+					<div class="bolas-ultimos-numeros">
+						<div class="bola-ultimo-numero"></div>
+					</div>
+					<div id="mensaje-error"></div>
+				</div>
+			</section>
+			<!-- Fin mostrar los números de las últimas bolillas que salieron -->
+		</section>
+		<!-- FIN Sección principal -->
+	</div>
+	<!-- INICIO Ventana emergente -->
+	<div class="ventana-emergente" id="ventana-emergente">
+	  <div class="ventana" id="ventana">
+		<div class="ventana-encabezado">
+		  <h2 id="ventana-titulo" class="fancy"></h2>
+		  <span class="ventana-cerrar">&times;</span>
+		</div>
+		<div class="ventana-contenido">
+		  <div id="numeros-jugados"></div>
+		</div>
+	  </div>
+	</div>	
+	<!-- FIN Ventana emergente -->
+	<script src="script.js"></script>
+</body>
+</html>
