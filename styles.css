@@ -282,12 +282,27 @@ button img {
 	border-right: 2px solid #000000;
 }
 
+.titulo-ultimos-numeros:nth-child(2) {
+    margin-left: auto; /* Mover este span a la derecha dentro de .recuadro-ultimos-numeros */
+    display: block; /* Convertir el span en un elemento de bloque */
+}
+
 .titulo-ultimos-numeros h1 {
 	font-family: Arial, sans-serif;
 	font-size: 1.75rem;
 	font-weight: bold;
 	text-transform: uppercase;
 	margin: 0;
+}
+
+.titulo-ultimos-numeros h2 {
+	font-family: Arial, sans-serif;
+	font-size: 1.25rem;
+	margin-top: 5px;
+	/*font-weight: bold;*/
+	text-transform: uppercase;
+	text-align: right;
+	/*margin: 50;*/
 }
 
 .bolas-ultimos-numeros {
